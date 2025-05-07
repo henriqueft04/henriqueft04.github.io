@@ -1,0 +1,27 @@
+---
+// Simple icon component to replace astro-icon
+const { name, class: className } = Astro.props;
+
+// Map icon names to paths
+const iconMap: Record<string, string> = {
+  // Logo icons
+  "logomark": "/src/icons/logomark.svg",
+  "wordmark": "/src/icons/wordmark.svg",
+  
+  // MDI icons
+  "mdi:menu": "https://api.iconify.design/mdi/menu.svg",
+  "mdi:close": "https://api.iconify.design/mdi/close.svg",
+  "mdi:telescope": "https://api.iconify.design/mdi/telescope.svg",
+  "mdi:rocket": "https://api.iconify.design/mdi/rocket.svg",
+  "mdi:white-balance-sunny": "https://api.iconify.design/mdi/white-balance-sunny.svg",
+  "mdi:weather-night": "https://api.iconify.design/mdi/weather-night.svg",
+};
+
+const iconPath = iconMap[name] || "";
+---
+
+{iconPath.endsWith('.svg') ? (
+  <img src={iconPath} class={className} alt="" />
+) : (
+  <span class={className}></span>
+)} 
