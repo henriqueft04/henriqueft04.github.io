@@ -1,6 +1,5 @@
 ---
 import Icon from "~/components/Icon.astro";
-import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
 const navItems: Array<NavItem> = [
@@ -42,7 +41,6 @@ const navItems: Array<NavItem> = [
       >
         <Icon name="mdi:menu" class="size-8" />
       </button>
-      <ThemeSwitcher />
     </div>
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
       <div class="fixed inset-0 bg-default px-8 py-4 text-default">
@@ -130,7 +128,7 @@ const navItems: Array<NavItem> = [
 <style>
   .fixed-header {
     @apply fixed bottom-auto top-0;
-    @apply border-default bg-default text-default;
+    @apply border-default bg-white text-primary;
   }
   .modal.is-open {
     @apply block;

@@ -3,28 +3,27 @@ import Icon from "~/components/Icon.astro";
 import ContentSection from "~/components/content-section.astro";
 ---
 
-<ContentSection title="Just ship less" id="intro">
-  <Icon slot="eyebrow" name="logomark" class="size-32" />
+<ContentSection title="Quem sou eu" id="intro">
   <Fragment slot="lead">
-    Astro is a new kind of site builder for the
-    <span class="text-primary">modern</span> web.
-    <span class="text-primary">Lightning-fast</span>
-    performance meets <span class="text-primary">powerful</span> developer experience.
+    O meu nome é
+    <span class="text-primary">Henrique</span> e sou escuteiro no agrupamento
+    <span class="text-primary">680 Santão</span>
+    do <span class="text-primary">Núcleo Este do Porto</span> há 13 anos
   </Fragment>
   <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
     <a
-      href="https://docs.astro.build/"
-      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      href="https://www.instagram.com/cla73_680santao/"
+      class="flex flex-col items-center justify-center gap-1 border-2 border-primary bg-white px-6 py-4 text-primary hover:bg-primary hover:text-white transition-colors"
     >
-      <Icon name="mdi:telescope" class="size-8" />
-      <span>Read the docs</span>
+      <span class="font-bold">Clã 73</span>
+      <span>680 Santão</span>
     </a>
     <a
-      href="https://astro.new/"
-      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      href="https://www.instagram.com/nestescutismo/"
+      class="flex flex-col items-center justify-center gap-1 border-2 border-primary bg-primary px-6 py-4 text-white hover:bg-white hover:text-primary transition-colors"
     >
-      <Icon name="mdi:rocket" class="size-8" />
-      <span>Try it out</span>
+      <span class="font-bold">Núcleo Este</span>
+      <span>Região do Porto</span>
     </a>
   </div>
 </ContentSection>

@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import ContentSection from "~/components/content-section.astro";
-import ShowcaseCard from "~/components/showcase-card.astro";
+import CompatibilityList from "~/components/compatibility-list.astro";
 
 const featuredSites = await getCollection(
   "showcase",
@@ -10,22 +10,50 @@ const featuredSites = await getCollection(
 const orderedSites = featuredSites.sort(
   (a, b) => a.data.featured! - b.data.featured!,
 );
+
+const frameworks: Array<CompatibilityItem> = [
+  {
+    title: "Boas Vibes",
+    icon: "frameworks/react",
+    url: "https://reactjs.org/",
+  },
+  {
+    title: "Guitarradas",
+    icon: "frameworks/preact",
+    url: "https://preactjs.com/",
+  },
+  {
+    title: "Já referi Vibes?",
+    icon: "frameworks/svelte",
+    url: "https://svelte.dev/",
+  },
+  {
+    title: "Empenho",
+    icon: "frameworks/vue",
+    url: "https://vuejs.org/",
+  },
+  {
+    title: "Boa Disposição",
+    icon: "frameworks/solid",
+    url: "https://www.solidjs.com/",
+  },
+  {
+    title: "Versatilidade",
+    icon: "frameworks/lit",
+    url: "https://lit.dev/",
+  },
+];
+
 ---
 
-<ContentSection title="Showcase" id="showcase">
+<ContentSection title="O que tenho a dar?" id="showcase">
   <Fragment slot="lead">
-    Astro is <span class="text-primary">versatile</span>.{" "}
-    <span class="text-primary">Explore</span> what's possible and get{" "}
-    <span class="text-primary">inspired</span>.
+    Sou muito <span class="text-primary">versátil</span>.
+    Gosto de explorar <span class="text-primary">novas realidades</span> e adaptar-me a novas situações.
   </Fragment>
-  <div class="max-w-6xl space-y-2">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {orderedSites.map((site) => <ShowcaseCard site={site} />)}
-    </div>
-    <p class="text-right text-sm">
-      <a class="text-primary" href="https://astro.build/showcase/">
-        ...and more &rarr;
-      </a>
-    </p>
-  </div>
+  <CompatibilityList
+    items={frameworks}
+    title="O que tenho a dar?"
+    url="https://docs.astro.build/core-concepts/framework-components/"
+  />
 </ContentSection>
