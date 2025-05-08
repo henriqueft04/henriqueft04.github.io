@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
+import Icon from "~/components/Icon.astro";
 import ric from "~/assets/ric.png";
 
 const widths = [450, 800];
@@ -39,6 +40,15 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       />
     </div>
   </div>
+  
+  <!-- Scroll Down Arrow -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10">
+    <a href="#intro" class="flex flex-col items-center text-primary">
+      <div class="scroll-arrow">
+        <Icon name="mdi:chevron-down" class="size-8" />
+      </div>
+    </a>
+  </div>
 </section>
 
 <noscript>
@@ -63,9 +73,25 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
   #astronaut {
     animation: float linear 2.5s infinite alternate;
   }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .scroll-arrow {
+    animation: bounce 2s infinite;
+  }
 
   @media (prefers-reduced-motion: reduce) {
-    #astronaut {
+    #astronaut, .scroll-arrow {
       @apply animate-none;
     }
 
