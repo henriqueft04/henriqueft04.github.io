@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import ContentSection from "~/components/content-section.astro";
 import CompatibilityList from "~/components/compatibility-list.astro";
+import type { CompatibilityItem } from "~/types";
 
 const featuredSites = await getCollection(
   "showcase",
@@ -14,42 +15,47 @@ const orderedSites = featuredSites.sort(
 const frameworks: Array<CompatibilityItem> = [
   {
     title: "Boas Vibes",
-    icon: "frameworks/react",
-    url: "https://reactjs.org/",
+    icon: "wave",
+    url: "#dar",
   },
   {
     title: "Guitarradas",
-    icon: "frameworks/preact",
-    url: "https://preactjs.com/",
+    icon: "guitar-acoustic",
+    url: "#dar",
   },
   {
-    title: "Já referi Vibes?",
-    icon: "frameworks/svelte",
-    url: "https://svelte.dev/",
+    title: "Mais Vibes",
+    icon: "rock-on",
+    url: "#dar",
   },
   {
     title: "Empenho",
-    icon: "frameworks/vue",
-    url: "https://vuejs.org/",
+    icon: "energy",
+    url: "#dar",
   },
   {
-    title: "Boa Disposição",
-    icon: "frameworks/solid",
-    url: "https://www.solidjs.com/",
+    title: "Boa Humor",
+    icon: "happy",
+    url: "#dar",
   },
   {
     title: "Versatilidade",
-    icon: "frameworks/lit",
-    url: "https://lit.dev/",
+    icon: "octopus",
+    url: "#dar",
   },
 ];
 
 ---
 
-<ContentSection title="O que tenho a dar?" id="showcase">
+<ContentSection title="O que tenho a Dar?" id="dar">
   <Fragment slot="lead">
     Sou muito <span class="text-primary">versátil</span>.
     Gosto de explorar <span class="text-primary">novas realidades</span> e adaptar-me a novas situações.
+    Adoro <span class="text-primary">aprender</span> e <span class="text-primary">trabalhar em equipa</span>. 
+    Sei que posso ter <span class="text-primary">dificuldades</span> em certas situações, 
+    e algumas <span class="text-primary">falhas</span>, mas também sei que o meu ponto forte é a minha
+    <span class="text-primary">perseverança</span> e <span class="text-primary">determinação</span>,
+    quando me proponho a algo, <span class="text-primary">não desisto</span> até o conseguir.
   </Fragment>
   <CompatibilityList
     items={frameworks}

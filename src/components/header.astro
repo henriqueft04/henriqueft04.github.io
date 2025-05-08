@@ -1,11 +1,15 @@
 ---
 import Icon from "~/components/Icon.astro";
 import type { NavItem } from "~/types";
+import { Image } from "astro:assets";
+import kanderstegLogo from "~/assets/kandersteg.png";
 
 const navItems: Array<NavItem> = [
-  { title: "Objetivos", url: "#features" },
-  { title: "Porquê", url: "#compatibility" },
-  { title: "Dar", url: "#showcase" },
+  { title: "Quem?", url: "#intro" },
+  { title: "Objetivos", url: "#objetivos" },
+  { title: "Motivo", url: "#motivo" },
+  { title: "Dar", url: "#dar" },
+  { title: "Receber", url: "#receber" },
 ];
 ---
 
@@ -14,9 +18,7 @@ const navItems: Array<NavItem> = [
   class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <h1 class="sr-only">Astro</h1>
-    <Icon name="logomark" class="size-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+    <Image src={kanderstegLogo} alt="Kandersteg Logo" width={80} height={80} class="h-auto w-30 object-contain" />
   </a>
   <div>
     <div class="flex items-center gap-6">
@@ -56,7 +58,7 @@ const navItems: Array<NavItem> = [
             </button>
           </header>
           <div class="flex justify-center">
-            <Icon name="logomark" class="size-16" />
+            <Image src={kanderstegLogo} alt="Kandersteg Logo" width={64} height={64} class="h-auto w-16 object-contain" />
           </div>
           <nav>
             <ul class="flex flex-col">

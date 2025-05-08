@@ -1,0 +1,56 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import type { CompatibilityItem } from "~/types";
+import CompatibilityList from "~/components/compatibility-list.astro";
+
+const goals: Array<CompatibilityItem> = [
+  {
+    title: "Experiência",
+    icon: "mdi:backpack",
+    url: "#receber",
+  },
+  {
+    title: "Amigos",
+    icon: "mdi:account-group",
+    url: "#receber",
+  },
+  {
+    title: "Cultura",
+    icon: "mdi:earth",
+    url: "#receber",
+  },
+  {
+    title: "Inspiração",
+    icon: "mdi:lightbulb",
+    url: "#receber",
+  },
+  {
+    title: "Recordações",
+    icon: "mdi:camera",
+    url: "#receber",
+  },
+  {
+    title: "Crescimento",
+    icon: "mdi:account-arrow-up",
+    url: "#receber",
+  },
+];
+---
+
+<ContentSection title="O que conto Receber?" id="receber">
+  <Fragment slot="lead">
+    Ir a <span class="text-primary">Kandersteg</span> seria uma oportunidade úncia de <span class="text-primary">crescimento</span> pessoal.
+    Conto de conhecer <span class="text-primary">novas culturas</span>, fazer <span class="text-primary">novas amizades</span> 
+    , <span class="text-primary">criar laços mágicos</span> e trazer <span class="text-primary">inspiração</span> para o meu trabalho no Escutismo. 
+    Eu <span class="text-primary"> adoro conhecer e interagir com pessoas novas</span>.
+    Quero <span class="text-primary">aprender</span> como funciona o mundo fora da minha  
+    <span class="text-primary">zona de conforto</span>.
+    Seria acima de tudo uma <span class="text-primary">experiência única</span> que iria enriquecer não só a minha 
+    <span class="text-primary">jornada escutista</span>, mas para sempre a minha <span class="text-primary">vida</span>.
+  </Fragment>
+  <CompatibilityList
+    items={goals}
+    title="O que quero receber?"
+    url="#receber"
+  />
+</ContentSection> 
