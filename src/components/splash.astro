@@ -42,14 +42,40 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
   </div>
   
   <!-- Scroll Down Arrow -->
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10">
-    <a href="#intro" class="flex flex-col items-center text-primary">
+  <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20">
+    <button id="scroll-btn" class="flex flex-col items-center text-primary hover:text-primary/70 transition-colors focus:outline-none">
       <div class="scroll-arrow">
-        <Icon name="mdi:chevron-down" class="size-8" />
+        <Icon name="mdi:chevron-down" class="size-10" />
       </div>
-    </a>
+    </button>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollButton = document.getElementById('scroll-btn');
+    
+    if (scrollButton) {
+      scrollButton.addEventListener('click', () => {
+        const introSection = document.getElementById('intro');
+        
+        if (introSection) {
+          introSection.scrollIntoView({
+            behavior: 'smooth'
+          });
+        } else {
+          // Fallback - get the first section after splash
+          const sections = document.querySelectorAll('section');
+          if (sections.length > 1) {
+            sections[1].scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    }
+  });
+</script>
 
 <noscript>
   <style>
